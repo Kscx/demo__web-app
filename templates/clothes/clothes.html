@@ -1,0 +1,29 @@
+<ion-view view-title="ios9 手机壁纸">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-slide-box does-continue="true" auto-play="true" slide-interval="2500">
+            <ion-slide>
+                <div class="box" style="font-size: 0;"><img style="float: left;width: 100%;height:200px;" src="images/1.jpg"/></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box" style="font-size: 0;"><img style="float: left;width: 100%;height:200px;" src="images/2.jpg"/></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box" style="font-size: 0;"><img style="float: left;width: 100%;height:200px;" src="images/3.jpg"/></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box" style="font-size: 0;"><img style="float: left;width: 100%;height:200px;" src="images/4.jpg"/></div>
+            </ion-slide>
+        </ion-slide-box>
+        <div>
+            <a style="display: inline-block;float: left;width:50%" ng-repeat="product in products" href="#/app/tabs/detail?title={{product.imgsrc}}">
+                <img style="float: left;width:100%" ng-src="{{product.imgsrc}}"/>
+            </a>
+        </div>
+        <ion-infinite-scroll on-infinite="loadMore()"></ion-infinite-scroll>
+        <button style="color: white;font-size: 40px;text-align: center;line-height: 44px;cursor: pointer;position: absolute;bottom: 60px;right: 0;
+        opacity: 0.8;" class="button button-icon  ion-arrow-up-a " ng-click="top()"></button>
+    </ion-content>
+</ion-view>
